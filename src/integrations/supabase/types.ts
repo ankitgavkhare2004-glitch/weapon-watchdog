@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      weapon_detections: {
+        Row: {
+          bbox: Json | null
+          confidence: number
+          detected_at: string | null
+          id: string
+          image_data: string
+          weapon_type: string
+        }
+        Insert: {
+          bbox?: Json | null
+          confidence: number
+          detected_at?: string | null
+          id?: string
+          image_data: string
+          weapon_type: string
+        }
+        Update: {
+          bbox?: Json | null
+          confidence?: number
+          detected_at?: string | null
+          id?: string
+          image_data?: string
+          weapon_type?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
